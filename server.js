@@ -7,6 +7,8 @@ const server = http.createServer((req, res) => {
 
     let path = './views/';
 
+    res.statusCode = 200;
+
     switch(req.url) {
         case '/':
             path += 'index.html';
@@ -19,6 +21,7 @@ const server = http.createServer((req, res) => {
             break;
         default:
             path += '404.html';
+            res.statusCode = 404;
             break;
     }
 
