@@ -9,6 +9,9 @@ const server = http.createServer((req, res) => {
 
     res.statusCode = 200;
 
+    // set header content type
+    res.setHeader('Content-Type', 'text/html');
+
     switch(req.url) {
         case '/':
             path += 'index.html';
@@ -19,14 +22,16 @@ const server = http.createServer((req, res) => {
         case '/about':
             path += 'about.html';
             break;
+        case '/about-me':
+            res.setHeader('Location', '/about');
+            res.statusCode = 301;
+            res.end();
+            break;
         default:
             path += '404.html';
             res.statusCode = 404;
             break;
     }
-
-    // set header content type
-    res.setHeader('Content-Type', 'text/html');
 
     // send a html file
     fs.readFile(path, (err,data) => {
@@ -35,6 +40,7 @@ const server = http.createServer((req, res) => {
     }
     res.end(data);
     });
+
 });
 
 const port = 8282;
