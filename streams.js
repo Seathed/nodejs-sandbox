@@ -12,10 +12,12 @@ const readStream = fs.createReadStream('./docs/numbers.txt', {encoding:'utf8'});
 const writeStream = fs.createWriteStream('./docs/post3.txt');
 
 // .on is an event listener (to a data event)
-readStream.on('data', (chunk) => {
-    console.log('----- NEW CHUNK -----');
-    console.log(chunk);
-    writeStream.write('\nNEW CHUNK\n');
-    writeStream.write(chunk);
-});
+// readStream.on('data', (chunk) => {
+//     console.log('----- NEW CHUNK -----');
+//     console.log(chunk);
+//     writeStream.write('\nNEW CHUNK\n');
+//     writeStream.write(chunk);
+// });
 
+// piping
+readStream.pipe(writeStream);
