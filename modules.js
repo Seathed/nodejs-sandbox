@@ -1,1 +1,3 @@
-const peopleModule = require('./people');
+const people = require('./people');
+
+console.log(people);
