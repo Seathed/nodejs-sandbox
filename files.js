@@ -16,12 +16,21 @@ const fs = require('fs');
 // });
 
 // directories
+
+// existsSync is a synchronous function
 if(!fs.existsSync('./assets')) {
     fs.mkdir('./assets', (err) => {
         if(err) {
             console.log(err);
         }
         console.log('directory created');
+    });
+} else {
+    fs.rmdir('./assets', (err) => {
+        if(err) {
+            console.log(err);
+        }
+        console.log('directory deleted');
     });
 }
 
