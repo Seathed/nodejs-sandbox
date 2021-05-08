@@ -5,10 +5,12 @@ const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
 
     // set header content type
-    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', 'text/html');
     
     // write the response
-    res.write('Default response with react http module.');
+    res.write('<head><link rel="stylesheet" href="#"></head>')
+    res.write('<h1>This is a Title</h1>');
+    res.write('<p>This is a paragraph in html.</p>');
 
     // end the response
     res.end();
