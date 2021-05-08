@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     console.log('request received');
@@ -6,14 +7,14 @@ const server = http.createServer((req, res) => {
 
     // set header content type
     res.setHeader('Content-Type', 'text/html');
-    
-    // write the response
-    res.write('<head><link rel="stylesheet" href="#"></head>')
-    res.write('<h1>This is a Title</h1>');
-    res.write('<p>This is a paragraph in html.</p>');
 
-    // end the response
-    res.end();
+    // send a html file
+    fs.readFile('./views/index.html', (err,data) => {
+    if(err) {
+        console.log(err);
+    }
+    res.end(data);
+    });
 });
 
 const port = 8282;
