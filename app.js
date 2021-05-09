@@ -1,4 +1,7 @@
+const { time } = require('console');
 const express = require('express');
+const fs = require('fs');
+const timestamp = require('time-stamp');
 
 // express app
 const app = express();
@@ -16,6 +19,15 @@ app.use((req, res, next) => {
     console.log("Method: ", req.method);
 
     // move onto the next function
+    next();
+});
+
+app.use((req, res, next) => {
+    fs.appendFile('./log.txt','Request Made at ' + `${timestamp('YY/MM/DD HH:mm:ss')}` + '\nHost: ' + req.hostname + '\nPath: ' + req.path + '\nMethod: ' + req.method + '\n\n', (err) => {
+        if(err) {
+            console.log(err);
+        }
+    });
     next();
 });
 
