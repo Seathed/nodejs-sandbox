@@ -11,17 +11,16 @@ const server = app.listen(8282);
 
 // routing
 app.get('/', (req, res) => {
-    // looks for an absolute path
-    // need a second argument to specify the root directory to search in
-    res.sendFile('./views/index.html', { root: __dirname });
+    // render is used to send an ejs view
+    res.render('index');
 });
 
 app.get('/home', (req, res) => {
-    res.sendFile('./views/index.html', { root: __dirname });
+    res.render('index');
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile('./views/about.html', { root: __dirname });
+    res.render('about');
 });
 
 // redirects
@@ -32,5 +31,5 @@ app.get('/about-me', (req, res) => {
 // 404
 app.use((req, res) => {
     res.statusCode = 404;
-    res.sendFile('./views/404.html', { root: __dirname });
+    res.render('404');
 });
