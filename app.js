@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
         {title: 'Waluigi is the best character in the Mario Universe', snippet: 'Lorem ipsum dolor sit amet consectetur'},
         {title: 'How to play Mario Kart', snippet: 'Lorem ipsum dolor sit amet consectetur'}
     ]
-    res.render('index', {title: 'Home'});
+    res.render('index', {title: 'Home', blogs});
 });
 
 app.get('/home', (req, res) => {
