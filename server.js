@@ -8,10 +8,12 @@ const server = http.createServer((req, res) => {
     const num = _.random(0, 25);
     console.log(num);
 
+    // function will only ever run once
     const greet = _.once(() => {
         console.log('hello');
     });
 
+    // only the first greet will execute
     greet();
     greet();
 
