@@ -6,16 +6,20 @@ const mongoose = require('mongoose');
 
 // Connect to MongoDB
 const dbURI = 'mongodb+srv://database-admin:M1LiGqobCVGvDCTX@seathed-node.pl9vp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-mongoose.connect(dbURI, {useNewURLParser: true});
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => {
+        const server = app.listen(8282);
+        console.log('connected to mongodb')
+    })
+    .catch((err) => {
+        console.log(err);
+});
 
 // express app
 const app = express();
 
 // register view engine
 app.set('view engine', 'ejs');
-
-// listen for requests
-const server = app.listen(8282);
 
 // static files
 app.use(express.static('public'));

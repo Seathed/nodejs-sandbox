@@ -23,3 +23,18 @@ Host: 127.0.0.1
 Path: /
 Method: GET
 
+Request Made at 21/05/09 12:45:33
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/09 12:45:33
+Host: 127.0.0.1
+Path: /favicon.ico
+Method: GET
+
+Request Made at 21/05/09 12:45:34
+Host: 127.0.0.1
+Path: /
+Method: GET
+
