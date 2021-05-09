@@ -2,9 +2,11 @@ const express = require('express');
 const fs = require('fs');
 const timestamp = require('time-stamp');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 // Connect to MongoDB
 const dbURI = 'mongodb+srv://database-admin:M1LiGqobCVGvDCTX@seathed-node.pl9vp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+mongoose.connect(dbURI, {useNewURLParser: true});
 
 // express app
 const app = express();
