@@ -1,7 +1,7 @@
-const { time } = require('console');
 const express = require('express');
 const fs = require('fs');
 const timestamp = require('time-stamp');
+const morgan = require('morgan');
 
 // express app
 const app = express();
@@ -12,15 +12,7 @@ app.set('view engine', 'ejs');
 // listen for requests
 const server = app.listen(8282);
 
-app.use((req, res, next) => {
-    console.log("New Request Made:");
-    console.log("Host: ", req.hostname);
-    console.log("Path: ", req.path);
-    console.log("Method: ", req.method);
-
-    // move onto the next function
-    next();
-});
+app.use(morgan('dev'));
 
 app.use((req, res, next) => {
     fs.appendFile('./log.txt','Request Made at ' + `${timestamp('YY/MM/DD HH:mm:ss')}` + '\nHost: ' + req.hostname + '\nPath: ' + req.path + '\nMethod: ' + req.method + '\n\n', (err) => {
