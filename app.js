@@ -23,6 +23,10 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
+app.get('/blogs/create', (req, res) => {
+    res.render('create');
+});
+
 // redirects
 app.get('/about-me', (req, res) => {
     res.redirect('/about');
