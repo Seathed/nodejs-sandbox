@@ -133,3 +133,38 @@ Host: 127.0.0.1
 Path: /
 Method: GET
 
+Request Made at 21/05/09 14:15:26
+Host: 127.0.0.1
+Path: /single-blog
+Method: GET
+
+Request Made at 21/05/09 14:15:26
+Host: 127.0.0.1
+Path: /favicon.ico
+Method: GET
+
+Request Made at 21/05/09 14:15:28
+Host: 127.0.0.1
+Path: /single-blog
+Method: GET
+
+Request Made at 21/05/09 14:15:28
+Host: 127.0.0.1
+Path: /favicon.ico
+Method: GET
+
+Request Made at 21/05/09 14:15:34
+Host: 127.0.0.1
+Path: /single-blog
+Method: GET
+
+Request Made at 21/05/09 14:15:38
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/09 14:15:43
+Host: 127.0.0.1
+Path: /single-blog
+Method: GET
+

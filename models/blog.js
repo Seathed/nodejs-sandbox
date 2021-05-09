@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const blogSchema = new mongoose.Schema( {
     title: {
@@ -18,4 +18,4 @@ const blogSchema = new mongoose.Schema( {
 
 const Blog = mongoose.model('Blog', blogSchema);
 
-module.export = Blog;
+module.exports = Blog;
