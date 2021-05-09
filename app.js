@@ -9,6 +9,16 @@ app.set('view engine', 'ejs');
 // listen for requests
 const server = app.listen(8282);
 
+app.use((req, res, next) => {
+    console.log("New Request Made:");
+    console.log("Host: ", req.hostname);
+    console.log("Path: ", req.path);
+    console.log("Method: ", req.method);
+
+    // move onto the next function
+    next();
+});
+
 // routing
 app.get('/', (req, res) => {
     // render is used to send an ejs view
