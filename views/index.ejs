@@ -1,15 +1,29 @@
-<html>
-    <header>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content="width=device-width, intial-scale=1.0">
         <title>Default React Page</title>
-    </header>
+    </head>
 
     <body>
         <h1>Index Page</h1>
         <p>This is a html page that can be built independently from react and nodejs</p>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
+            <div class="site-title">
+                <a href="/"<h1>Home</h1></a>
+                <p>A Nodejs powered blog</p>
+            </div>
+            <ul>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/blogs/create">New Blog</a>
+            </ul>
         </nav>
+
+        <div class="blogs content">
+            <h2>All Blogs</h2>
+        </div>
+
     </body>
 
     <footer>
