@@ -12,6 +12,10 @@ app.set('view engine', 'ejs');
 // listen for requests
 const server = app.listen(8282);
 
+// static files
+app.use(express.static('public'));
+
+// morgan console logging
 app.use(morgan('dev'));
 
 app.use((req, res, next) => {
