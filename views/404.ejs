@@ -1,24 +1,10 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name='viewport' content="width=device-width, intial-scale=1.0">
-        <title>Blog | <%=title%></title>
-    </head>
+    <%- include('./partials/head.ejs') %>
 
     <body>
         <h1>404 - Page not Found</h1>
         <p>That resource is not located on this site</p>
-        <nav>
-            <div class="site-title">
-                <a href="/"<h1>Home</h1></a>
-                <p>A Nodejs powered blog</p>
-            </div>
-            <ul>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/blogs/create">New Blog</a>
-            </ul>
-        </nav>
+        <%- include('./partials/nav.ejs') %>
 
         <div class="404 content">
             <p>Check the url again, the resouce you are looking for is not found at the path specified.</p>
@@ -26,7 +12,5 @@
 
     </body>
 
-    <footer>
-        
-    </footer>
+    <%- include('./partials/footer.ejs') %>
 </html>
