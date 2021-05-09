@@ -4,6 +4,7 @@ const timestamp = require('time-stamp');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Blog = require('./models/blog');
+const { brotliDecompress } = require('zlib');
 
 // Connect to MongoDB
 const dbURI = 'mongodb+srv://database-admin:M1LiGqobCVGvDCTX@seathed-node.pl9vp.mongodb.net/seathed-node?retryWrites=true&w=majority';
@@ -24,6 +25,9 @@ app.set('view engine', 'ejs');
 
 // static files
 app.use(express.static('public'));
+
+// get objects in request object
+app.use(express.urlencoded({extended: true}));
 
 // morgan console logging
 app.use(morgan('dev'));
@@ -88,11 +92,22 @@ app.get('/blogs', (req, res) => {
 })
 
 app.get('blogs/create', (req, res) => {
+    res.render('create', { title: 'Create a New Blog'});
+});
 
-    // 404
+app.post('/blogs', (req, res) => {
+    const blog = new Blog(req.body);
+    blog.save()
+    .then((result) => {
+        res.redirect("/blogs");
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+});
+
+// 404
 app.use((req, res) => {
      res.statusCode = 404;
     res.render('404', {title: '404'});
-});
-
 });
