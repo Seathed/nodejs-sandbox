@@ -1168,3 +1168,8 @@ Host: 127.0.0.1
 Path: /blogs
 Method: GET
 
+Request Made at 21/05/11 13:51:19
+Host: 127.0.0.1
+Path: /
+Method: GET
+
