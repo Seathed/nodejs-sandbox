@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Blog = require('./models/blog');
 const { brotliDecompress } = require('zlib');
+const { render } = require('ejs');
 
 // Connect to MongoDB
 const dbURI = 'mongodb+srv://database-admin:M1LiGqobCVGvDCTX@seathed-node.pl9vp.mongodb.net/seathed-node?retryWrites=true&w=majority';
@@ -80,6 +81,8 @@ app.get('/about-me', (req, res) => {
 });
 
 // blog routes
+
+// GET
 app.get('/blogs', (req, res) => {
     Blog.find()
     .sort({createdAt: -1})
@@ -95,6 +98,16 @@ app.get('blogs/create', (req, res) => {
     res.render('create', { title: 'Create a New Blog'});
 });
 
+app.get('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findById(id).then((result) => {
+        res.render('details', {blog: result, title:'Blog Details'})
+    }).catch((err) => {
+            console.log(err);
+    })
+});
+
+// POST
 app.post('/blogs', (req, res) => {
     const blog = new Blog(req.body);
     blog.save()
@@ -105,6 +118,9 @@ app.post('/blogs', (req, res) => {
         console.log(err);
     })
 });
+
+// DELETE
+
 
 // 404
 app.use((req, res) => {
