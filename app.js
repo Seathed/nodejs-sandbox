@@ -39,7 +39,7 @@ app.get('/blogs/create', (req, res) => {
 });
 
 // blog routes
-app.use(blogRouter);
+app.use('/blogs', blogRouter);
 
 // mongoose and mongodb sandbox routes
 app.get('/add-blog', (req, res) => {
