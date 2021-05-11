@@ -13,6 +13,6 @@ blogRouter.get('/:id', blogController.blogDetails);
 blogRouter.post('/', blogController.blogCreatePost);
 
 // DELETE
-blogRouter.delete('/:id', blogController.blogCreateDelete);
+blogRouter.delete('/:id', blogController.blogDelete);
 
 module.exports = blogRouter;

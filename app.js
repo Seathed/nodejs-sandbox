@@ -33,11 +33,6 @@ app.use(express.urlencoded({extended: true}));
 // morgan console logging
 app.use(morgan('dev'));
 
-// Create a Blog
-app.get('/blogs/create', (req, res) => {
-    res.render('create', {title: 'Create a New Blog'});
-});
-
 // blog routes
 app.use('/blogs', blogRouter);
 
