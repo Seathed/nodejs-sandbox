@@ -1273,3 +1273,48 @@ Host: 127.0.0.1
 Path: /favicon.ico
 Method: GET
 
+Request Made at 21/05/11 14:16:37
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/11 14:16:37
+Host: 127.0.0.1
+Path: /favicon.ico
+Method: GET
+
+Request Made at 21/05/11 14:17:42
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/11 14:17:43
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/11 14:17:48
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/11 14:17:49
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/11 14:17:50
+Host: 127.0.0.1
+Path: /about
+Method: GET
+
+Request Made at 21/05/11 14:17:50
+Host: 127.0.0.1
+Path: /
+Method: GET
+
+Request Made at 21/05/11 14:17:51
+Host: 127.0.0.1
+Path: /
+Method: GET
+
